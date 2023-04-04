@@ -33,5 +33,14 @@ public class Homework {
 
     static void removeIntegers(List<String> strings) {
         // TODO: 31.03.2023 Удалить строки, которые являются целыми числами
+        for (int i = 0; i < strings.size(); i++) {
+            try {
+                Integer.parseInt(strings.get(i));
+                strings.remove(strings.get(i));
+                i--;
+                } catch (NumberFormatException e) {
+                    continue;
+                }
+        }
     }
 }
